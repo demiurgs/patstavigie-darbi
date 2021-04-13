@@ -15,8 +15,12 @@ def university(environ):
         wsgi_input = environ["wsgi.input"].read(length).decode()
         form_data = parse_qs(wsgi_input)
 
+        maths = int(form_data["maths"][0])
+        latvian = int(form_data["latvian"][0])
+        foreign = int(form_data["foreign"][0])
+
         can_apply = "can not apply"
-        if int(form_data["maths"][0]) > 40 and int(form_data["latvian"][0]) > 40 and int(form_data["foreign"][0]) > 40:
+        if maths >= 40 and latvian >= 40 and foreign >= 40:
             can_apply = "can appy"
 
         response_content = f"{form_data['name'][0]} {can_apply} to university"
