@@ -1,2 +1,2 @@
-# patstavigie-darbi
 # LU Python 
+## Patstāvīgie darbi
